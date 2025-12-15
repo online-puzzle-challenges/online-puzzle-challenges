@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Puzzle Room</title>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: 40px auto; }
+    input { padding: 8px; width: 100%; margin-top: 10px; }
+    button { padding: 10px 16px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to the Puzzle Room</h1>
+  <p>Enter the key to unlock the next puzzle:</p>
+
+  <input id="keyInput" placeholder="Type your answer…" />
+  <button onclick="submitKey()">Unlock</button>
+
+  <p id="status"></p>
+
+  <script>
+    function submitKey() {
+      const key = document.getElementById("keyInput").value.trim().toLowerCase();
+      if (key === "the key") {
+        window.location = "?p=002";
+      } else {
+        document.getElementById("status").textContent = "Incorrect key.";
+      }
+    }
+  </script>
+
+</body>
+</html>
