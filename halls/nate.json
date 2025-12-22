@@ -4,11 +4,25 @@
   "rooms": [
     {
 	"id": "nate-1",
-    "title": "Visual Puzzle",
+    "title": "What's the key?",
+    "description": "say the key",
+	"key": "the key",
+	"hints": ["dude."]
+	}, 
+	{
+	"id": "nate-2",
+    "title": "What's behind door number two?",
+    "description": "you can't go through the front door",
+	"key": "backdoor",
+	"hints": ["no space"]
+	},
+	{
+	"id": "nate-3",
+    "title": "Time's the Charm",
     "description": "Observe the diagram carefully.",
 	"image": "images/TrianguloPascal.jpg",
 	"key": "triangle",
-	"hints": ["Focus on the corners."]
+	"hints": ["what shape is this?."]
 }
   ]
 }
