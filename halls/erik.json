@@ -12,9 +12,9 @@
 	{
       "id": "erik-2",
       "title": "poetic license",
-      "description": "all that is gold does not sparkle, not all those that wander are lost; the aged that is strong does not wither, old roots are not reached by the frost.",
+      "description": "all that is gold does not Sparkle, not all those thAt wander are lost; the aGed that is strong does not wither, Old roots are not reached by the frost.",
       "key": "gold",
-      "hints": ["check for changed words","look at first letters","an element"]
+      "hints": ["check for changed words","look at corresponding marked letters","an element"]
     }
   ]
 }
