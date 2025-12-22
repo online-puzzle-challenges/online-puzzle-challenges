@@ -145,6 +145,15 @@ function render() {
 
     const title = document.createElement("h3");
     title.textContent = room.title;
+	
+	if (room.image) {
+	  const img = document.createElement("img");
+	  img.src = room.image;
+	  img.alt = room.title;
+	  img.style.maxWidth = "100%";
+	  img.style.marginTop = "8px";
+	  roomDiv.appendChild(img);
+	}
 
     const desc = document.createElement("p");
 	desc.textContent = room.description; 
@@ -229,7 +238,7 @@ function render() {
         roomDiv.appendChild(hintBtn);
       }
     }
-
+	
     app.appendChild(roomDiv);
   });
 }

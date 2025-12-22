@@ -3,32 +3,12 @@
   "displayName": "Nate’s Puzzle Hall",
   "rooms": [
     {
-      "id": "nate-1",
-      "title": "The First Door",
-      "description": "Sometimes the key is exactly what it sounds like.",
-      "key": "the key",
-      "hints": ["This a hint, yo: <a href='https://letmegooglethat.com/'"]	
-    },
-	{
-      "id": "nate-2",
-      "title": "What's behind door number two?",
-      "description": "It's not a bootyhole",
-      "key": "backdoor",
-      "hints": ["Don't go in the front door"]
-    },
-	{
-      "id": "nate-3",
-      "title": "Time's the Charm",
-      "description": "Do this to your keyboard",
-      "key": "mash",
-      "hints": ["Potatoes, Korean War Drama"]
-    },
-	{
-	  "id": "nate-4",
-      "title": "Research Required",
-      "description": "Check <a href='https://www.wikipedia.com'>Wikipedia</a> for clues.",
-      "key": "nature",
-      "hints": ["Look at the main website carefully."]
-    }
+	"id": "nate-1",
+    "title": "Visual Puzzle",
+    "description": "Observe the diagram carefully.",
+	"image": "images/TrianguloPascal.jpg",
+	"key": "triangle",
+	"hints": ["Focus on the corners."]
+}
   ]
 }
