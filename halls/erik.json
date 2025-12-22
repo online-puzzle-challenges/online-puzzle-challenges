@@ -1,27 +1,20 @@
 {
   "id": "erik",
-  "displayName": "Erik'’s Puzzle Hall",
+  "displayName": "Erik’s Puzzle Hall",
   "rooms": [
     {
       "id": "erik-1",
-      "title": "First Door Title Goes Here",
-      "description": "Description Goes Here",
-      "key": "",
-      "hints": ["Hints can be left blank"]
+      "title": "At the entrace of Moria",
+      "description": "Speak, friend, and enter.",
+      "key": "friend",
+      "hints": ["Read the instructions literally."]
     },
 	{
       "id": "erik-2",
-      "title": "Second Door Title Goes Here",
-      "description": "Description Goes Here",
-      "key": "",
-      "hints": ["Hints can be left blank"]
-    },
-	{
-      "id": "erik-3",
-      "title": "Third Door Title Goes Here",
-      "description": "Description Goes Here",
-      "key": "",
-      "hints": ["Hints can be left blank"]
-	}
+      "title": "poetic license",
+      "description": "all that is gold does not sparkle, not all those that wander are lost; the aged that is strong does not wither, old roots are not reached by the frost.",
+      "key": "gold",
+      "hints": ["check for changed words","look at first letters","an element"]
+    }
   ]
 }
