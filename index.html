@@ -5,6 +5,7 @@
   <title>Puzzle House</title>
 
   <style>
+    body {
       font-family: system-ui, sans-serif;
       max-width: 700px;
       margin: 40px auto;
@@ -38,7 +39,12 @@
 
   <h1>Puzzle House</h1>
 
-  <div id="app"></div>
+<div>
+  <label for="hallSelect">Select Puzzle Hall:</label>
+  <select id="hallSelect"></select>
+</div>
+<div id="app"></div>
+
 
   <script>
     /*********************************************************
@@ -67,11 +73,43 @@
               hints: [
                 "Waiting is part of the solution."
               ]
-            }
+            },
+			{
+			  id: "nate-3",
+			  title: "Room Title Goes Here",
+			  description: "What the player sees when they enter the room.",
+			  key: "the answer",
+			  hints: [
+				"First gentle nudge.",
+				"Clearer direction.",
+				"Near-spoiler if needed."
+			  ]
+}
           ]
         }
       }
     };
+	
+let currentHallId = Object.keys(PUZZLE_HOUSE.halls)[0]; // default to first hall
+
+function populateHallDropdown() {
+  const select = document.getElementById("hallSelect");
+  select.innerHTML = ""; // clear existing options
+
+  Object.entries(PUZZLE_HOUSE.halls).forEach(([hallId, hall]) => {
+    const option = document.createElement("option");
+    option.value = hallId;
+    option.textContent = hall.displayName;
+    if (hallId === currentHallId) option.selected = true;
+    select.appendChild(option);
+  });
+
+  select.onchange = () => {
+    currentHallId = select.value;
+    render();
+  };
+}
+
 
     /*********************************************************
      * PROGRESS PERSISTENCE
@@ -117,63 +155,86 @@
      * RENDERING
      *********************************************************/
 
-    function render() {
-      const app = document.getElementById("app");
-      app.innerHTML = "";
+	function render() {
+	const app = document.getElementById("app");
+	app.innerHTML = "";
 
-      Object.values(PUZZLE_HOUSE.halls).forEach(hall => {
-        const hallHeader = document.createElement("h2");
-        hallHeader.textContent = hall.displayName;
-        app.appendChild(hallHeader);
+	const hall = PUZZLE_HOUSE.halls[currentHallId];
 
-        hall.rooms.forEach((room, index) => {
-          const roomDiv = document.createElement("div");
-          roomDiv.className = "room";
+	const hallHeader = document.createElement("h2");
+	hallHeader.textContent = hall.displayName;
+	app.appendChild(hallHeader);
 
-          const unlocked =
-            index === 0 || isUnlocked(hall.rooms[index - 1]);
+	  const resetHallBtn = document.createElement("button");
+	  resetHallBtn.textContent = "Reset Hall Progress";
+	  resetHallBtn.className = "danger";
+	  resetHallBtn.onclick = () => {
+		if (confirm("Re-lock all rooms in this hall?")) {
+		  relockFromRoom(hall, 0);
+		  render();
+		}
+	  };
+	  app.appendChild(resetHallBtn);
 
-          if (!unlocked) {
-            roomDiv.classList.add("locked");
-            roomDiv.textContent = "🔒 Locked";
-            app.appendChild(roomDiv);
-            return;
-          }
+	  hall.rooms.forEach((room, index) => {
+    const roomDiv = document.createElement("div");
+    roomDiv.className = "room";
 
-          const title = document.createElement("h3");
-          title.textContent = room.title;
+    const accessible = index === 0 || isUnlocked(hall.rooms[index - 1]);
 
-          const desc = document.createElement("p");
-          desc.textContent = room.description;
-
-          roomDiv.appendChild(title);
-          roomDiv.appendChild(desc);
-
-          if (isUnlocked(room)) {
-            const success = document.createElement("p");
-            success.textContent = "✅ Unlocked";
-            roomDiv.appendChild(success);
-          } else {
-            const input = document.createElement("input");
-            input.placeholder = "Enter key…";
-
-            const button = document.createElement("button");
-            button.textContent = "Unlock";
-            button.onclick = () => {
-              const ok = attemptUnlock(room, input.value);
-              alert(ok ? "Unlocked!" : "Incorrect key.");
-              render();
-            };
-
-            roomDiv.appendChild(input);
-            roomDiv.appendChild(button);
-          }
-
-          app.appendChild(roomDiv);
-        });
-      });
+    if (!accessible) {
+      roomDiv.classList.add("locked");
+      roomDiv.textContent = "🔒 Locked";
+      app.appendChild(roomDiv);
+      return;
     }
 
+    const title = document.createElement("h3");
+    title.textContent = room.title;
+
+    const desc = document.createElement("p");
+    desc.textContent = room.description;
+
+    roomDiv.appendChild(title);
+    roomDiv.appendChild(desc);
+
+    if (isUnlocked(room)) {
+      const status = document.createElement("p");
+      status.textContent = "✅ Unlocked";
+
+      const relockBtn = document.createElement("button");
+      relockBtn.textContent = "Re-lock from here";
+      relockBtn.className = "danger";
+      relockBtn.onclick = () => {
+        if (confirm("This will re-lock this room and all rooms after it. Continue?")) {
+          relockFromRoom(hall, index);
+          render();
+        }
+      };
+
+      roomDiv.appendChild(status);
+      roomDiv.appendChild(relockBtn);
+    } else {
+      const input = document.createElement("input");
+      input.placeholder = "Enter key…";
+
+      const btn = document.createElement("button");
+      btn.textContent = "Unlock";
+      btn.onclick = () => {
+        alert(attemptUnlock(room, input.value)
+          ? "Unlocked!"
+          : "Incorrect key.");
+        render();
+      };
+
+      roomDiv.appendChild(input);
+      roomDiv.appendChild(btn);
+    }
+
+    app.appendChild(roomDiv);
+  });
+}
+	populateHallDropdown();
     render();
   </script>
 
