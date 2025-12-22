@@ -1,0 +1,27 @@
+{
+  "id": "patty",
+  "displayName": "Patty's Puzzle Hall",
+  "rooms": [
+    {
+      "id": "patty-1",
+      "title": "First Door Title Goes Here",
+      "description": "Description Goes Here",
+      "key": "",
+      "hints": ["Hints can be left blank"]
+    },,
+	{
+      "id": "patty-2",
+      "title": "Second Door Title Goes Here",
+      "description": "Description Goes Here",
+      "key": "",
+      "hints": ["Hints can be left blank"]
+    },
+	{
+      "id": "patty-3",
+      "title": "Third Door Title Goes Here",
+      "description": "Description Goes Here",
+      "key": "",
+      "hints": ["Hints can be left blank"]
+	}
+  ]
+}
