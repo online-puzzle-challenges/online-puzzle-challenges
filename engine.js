@@ -2,7 +2,7 @@
  * CONFIG & STATE
  *********************************************************/
 
-const HALL_IDS = ["nate", "erik", "patty"];
+const HALL_IDS = ["nate", "erik", "patty", "haunted"];
 const STORAGE_KEY = "puzzleHouseProgress";
 
 let hallsData = {};

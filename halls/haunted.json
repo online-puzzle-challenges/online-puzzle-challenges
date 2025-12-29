@@ -1,0 +1,48 @@
+{
+  "id": "haunted",
+  "displayName": "Haunted House",
+  "rooms": [
+    {
+      "id": "haunted-1",
+      "title": "Front Door",
+      "description": "On a dark and stormy Halloween night, your friend dares you to enter the haunted Victorian-era house on Elm Street. The house is barely standing, with a broken window on the second floor and siding peeling off like snake skin. As you approach the door, the wind picks up, sending a chill down your spine. You reach for the handle—locked. But as you start to turn away, you notice some inscriptions on the door: Edoc de-liav a fo eman eht htiw rood eht no kconk.",
+      "key": "-- --- .-. ... . -.-. --- -.. .",
+      "hints": ["Alfred didn't spell his name V-e-i-l","-.- -. --- -.-. -.- .- -. -.. - .... . -.. --- --- .-. .-- .. .-.. .-.. -... . --- .--. . -. . -.."]
+    },
+
+	{
+      "id": "haunted-2",
+      "title": "Front Room",
+      "description": "The door opens, and you step inside—but there’s no one here. In fact, the house is silent, dark. You proceed to the sitting room. The sickly green wallpaper oozes with something foul. The lights are flickering. Something must be trying to communicate with you. You notice that the chandeliers are numbered 1-6, and notice that the lights are flickering in a pattern of six short flashes and three long flashes.",
+      "key": "SOS",
+      "hints": ["someone must be in trouble","just use the letters"]
+    },
+
+	{
+      "id": "haunted-3",
+      "title": "Hallway",
+      "description": "Someone needs your help! Heart racing, you hurry through the dining room, the study, and the kitchen in search of clues, but there’s nothing but the flickering lights that follow you. You pause in the hallway—when a portrait catches your eye.",
+      "image":"images/Vigenere.jpg",
+      "key": "basement",
+      "hints": [""]
+    },
+
+	{
+      "id": "haunted-4",
+      "title": "Basement door",
+      "description": "The door to the stands before you, locked. There is a key pad on the door with alphabetic letters, and there is a number 44678 12341 next to a crude drawing of a telephone.",
+      "key": "ghost",
+      "hints": ["After trying a few codes, you realize the keypad expects a five-letter code.","there is a way to hide letters with phone numbers"]
+    },
+
+	{
+      "id": "haunted-5",
+      "title": "Basement",
+      "description": "The door opens, and you enter. The ghost appears and the door slams and locks behind you. You heard the ghost making a sound which you somehow know is spelled 'hluggk'",
+      "key": "begone",
+      "hints": ["You realize the identity of the person in the portrait in the hallway may be a clue to the meaning."]
+    }
+
+
+  ]
+}
