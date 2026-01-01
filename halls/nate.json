@@ -23,6 +23,14 @@
 	"image": "images/TrianguloPascal.jpg",
 	"key": "triangle",
 	"hints": ["what shape is this?."]
-}
+	},
+	{
+	"id": "nate-4",
+    "title": "th dimension",
+    "description": "this is a test",
+	"image": "images/TrianguloPascal.jpg",
+	"key": "square",
+	"hints": ["don't be a _____"]
+	}
   ]
 }
