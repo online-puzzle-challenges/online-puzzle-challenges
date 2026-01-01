@@ -1,0 +1,13 @@
+{
+  "id": "buddy",
+  "displayName": "Buddy’s Puzzle Hall",
+  "rooms": [
+    {
+	"id": "buddy-1",
+    "title": "What's the magic word?",
+    "description": ""asthetic" + " " + "courtesy" is key",
+	"key": "please",
+	"hints": ["two words, first one looks good"]
+	}
+  ]
+}
