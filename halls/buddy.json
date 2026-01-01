@@ -5,8 +5,8 @@
     {
 	"id": "buddy-1",
     "title": "What's the magic word?",
-    "description": ""asthetic" + " " + "courtesy" is key",
-	"key": "please",
+    "description": "asthetic + courtesy is key",
+	"key": "pretty please",
 	"hints": ["two words, first one looks good"]
 	}
   ]
